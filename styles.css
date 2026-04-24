@@ -1,0 +1,440 @@
+/* make the loyaut with grid and ocult horizontal bar */
+
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "header header nav"
+    "main main main"
+    "footer footer footer";
+  grid-template-columns: 1fr 3fr 3fr;
+  grid-template-rows: 5.5rem 1fr 30rem;
+  overflow-x: hidden;
+}
+
+/* make the header overlapung evryting and stat in the top forever */
+
+header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+h1 {
+  background-color: goldenrod;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  height: 5.5rem;
+  margin: 0;
+}
+
+/* when the screen is small i wont have padding */
+
+@media (max-width: 768px) {
+  h1 {
+    padding-top: 0;
+  }
+}
+
+/* make the nav overlapung evryting and stat in the top forever */
+
+nav {
+  grid-area: nav;
+  background-color: beige;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* give the nav list spaces  */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* in celphon the nav list will be column */
+
+@media (max-width: 767px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+/* when someone hover the list elements it will hava a background grey */
+
+nav ul li:hover {
+  text-align: center;
+  padding-top: 0.5rem;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 1em;
+
+  background-color: grey;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  grid-area: main;
+}
+
+.plates p {
+  font-size: 2rem;
+  width: 55rem;
+  color: rgb(206, 200, 200);
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 1rem;
+}
+
+/* for tablets the size of the letter will be smaller and also the width */
+
+@media (max-width: 1200px) {
+  .plates p {
+    font-size: 1.5rem;
+    width: 30rem;
+  }
+}
+
+/* for celphone will be smaller */
+@media (max-width: 768px) {
+  .plates p {
+    font-size: 1rem;
+    width: 20rem;
+  }
+}
+
+/* give a background image :active flex and get into column thend give sapces and style of letter */
+
+.plates {
+  background-image: url(font.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 91vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  
+}
+
+/* active flex and hide the scroll bar */
+
+.carousel- {
+  display: flex;
+  border: black solid thin;
+  width: 40rem;
+  height: 30vh;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+/* make the width smaller for celphone */
+
+@media (max-width: 768px) {
+  .carousel- {
+    width: 20rem;
+  }
+}
+
+/* make the target wont beable to gorw and get smaller */
+
+.target {
+  flex: 0 0 10rem;
+  border-radius: 0.3rem;
+  height: max-content;
+}
+
+/* give the animation the durability and infinite */
+
+.group {
+  display: flex;
+  gap: 0.5rem;
+  animation: spin 10s infinite linear;
+  padding-right: 0.5rem;
+  align-items: center;
+  background-color: black;
+}
+
+/* make the animation */
+
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
+
+/* make the another carousel but this one is reverse */
+
+.carousel {
+  display: flex;
+  width: 40rem;
+  height: 30vh;
+  overflow: hidden;
+  border-radius: 1rem;
+  align-items: center;
+  background-color: black;
+}
+
+/* for celphon the width will be smaller */
+
+@media (max-width: 768px) {
+  .carousel {
+    width: 20rem;
+  }
+}
+
+.target2 {
+  flex: 0 0 10rem;
+  border-radius: 0.3rem;
+  height: 10rem;
+}
+
+.group2 {
+  display: flex;
+  gap: 0.5rem;
+  animation: spinright 10s infinite linear;
+  padding-right: 0.5rem;
+  padding-bottom: 5rem;
+}
+
+/* make the carousel translate from left to right */
+
+@keyframes spinright {
+  from {
+    translate: -100%;
+  }
+  to {
+    translate: 0%;
+  }
+}
+
+.calender {
+  background-color: rgb(18, 17, 17);
+  color: rgba(255, 255, 255, 0.627);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calender h2 {
+  padding-top: 3rem;
+  margin: 0;
+}
+
+.calender h2,
+p {
+  text-align: center;
+}
+
+.calender p {
+  font-size: 1.1rem;
+}
+
+/* give the list space inside the box and a width */
+
+.list {
+  font-size: 1.1rem;
+  max-width: 50%;
+  padding-left: 25%;
+  padding-bottom: 2rem;
+}
+
+/* for celphone the width will be smaller and the sapaces inside the box too */
+
+@media (max-width: 768px) {
+  .list {
+    max-width: 80%;
+    padding-left: 10%;
+    padding: 0;
+  }
+}
+
+/* create a cudricula that have 2 columns and 2 files */
+
+.information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  color: black;
+  background-color: black;
+  padding: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.information h2,
+h3,
+p {
+  text-align: center;
+}
+
+/*center the list with flex */
+
+.list_info {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  border: black solid thin;
+  border-radius: 1rem;
+  background-color: goldenrod;
+}
+
+/* for celphone the column will be only one and also the file */
+
+@media (max-width: 768px) {
+  .information {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.honors {
+  text-align: center;
+  background-color: rgb(38, 37, 37);
+  color: aliceblue;
+}
+
+.honors h2 {
+  margin: 0;
+  padding: 2rem;
+}
+
+/* make the elmentes go down if dont fit in the container */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90vw;
+  gap: 1rem;
+}
+
+.img_honor {
+  border: black solid thin;
+  width: 40rem;
+  height: 30rem;
+  border-radius: 0 3rem 0 3rem;
+}
+
+/* give a background image for all the div that is inside in the container */
+
+.container :first-child {
+  background-image: url(honors/cooking.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container :nth-child(2) {
+  background-image: url(honors/burger.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container :nth-child(3) {
+  background-image: url(honors/diploment.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container :last-child {
+  background-image: url(honors/work.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* give spaces to the items */
+
+.footer_content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+  
+}
+
+/* for celphone the itmes will be in column */
+
+@media(max-width:767px) {
+  .footer_content{
+    flex-direction: column;
+  }
+}
+
+/* get the elments inside the div in column */
+
+.footer_content div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+
+.footer_content ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.footer_content li {
+  padding: .5em;
+}
+
+.footer_content img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.footer_info {
+  text-align: center;
+}
+
+.footer_info a:hover {
+  color: gray;
+}
+
+/* put the form in column */
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  gap: .5rem;
+  
+}
+
+form input {
+  width: auto;
+  height: 5rem;
+  border-radius: .5rem;
+}
+
+/* when someone hover the input it get a background */
+
+form input:hover{
+  background-color: rgb(231, 226, 226);
+  
+  
+}
+
+footer {
+  grid-area: footer;
+  background-color: beige;
+}
+
